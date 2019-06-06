@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/gabriel/Documents/SEMEAR/GEVC/Exec1/code.cpp
+/home/gabriel/Documents/SEMEAR/GEVC/gevc_major/pbl1/code.cpp
 iostream
 -
 opencv2/highgui.hpp

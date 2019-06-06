@@ -48,15 +48,15 @@ int main(int argc, char *argv[])
 	cap.read(imgTmp);*/
 
 	while(true){
-		Mat imgOriginal;
+		//Mat imgOriginal;
 		/*
 		bool bSucess = cap.read(imgOriginal);
 		if(!bSucess){
 			cout << "Impossivel ler o video" << endl;
 		}
 		*/
-		Mat imgHSV;
-		cvtColor(src, imgHSV, COLOR_BGR2HSV);
+		Mat imgHSV = src.clone();
+		//cvtColor(src, imgHSV, COLOR_BGR2HSV);
 
 		Mat imgThresholded;
 		inRange(imgHSV, Scalar(iLowH,iLowS,iLowV),Scalar(iHighH,iHighS,iHighV),imgThresholded);

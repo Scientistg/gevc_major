@@ -1,4 +1,4 @@
-# Install script for directory: /home/gabriel/Documents/SEMEAR/GEVC/Exec1
+# Install script for directory: /home/gabriel/Documents/SEMEAR/GEVC/gevc_major/pbl1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gabriel/Documents/SEMEAR/GEVC/Exec1/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gabriel/Documents/SEMEAR/GEVC/gevc_major/pbl1/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
