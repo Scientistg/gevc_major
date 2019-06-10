@@ -23,11 +23,12 @@ int main(int argc, char *argv[])
 
 	int iLastX = -1;
 	int iLastY = -1;
-
+	
 	//while(true){
 	colorChanges(src,imgThresholded);
 	GaussianBlur(imgThresholded, dst, Size(9, 9), 2, 2 );
 	HoughCircles(dst, circlesL, CV_HOUGH_GRADIENT, 1, imgThresholded.rows/8, 40, 20, 0, 0 );
+	
 
 	GaussianBlur(src, src_gray, Size(9, 9), 2, 2 );
 	cvtColor(src_gray, src_gray, COLOR_BGR2GRAY);
@@ -57,22 +58,32 @@ int main(int argc, char *argv[])
    		// circle outline
    		circle( src, center, radius, Scalar(255,0,0), 3, 8, 0 );
  	}
-	/*
 
+	
 	int x_pos[2];
-	int y_pos[2];
-	for( size_t i = 0; i < circles.size(); i++ )
-	{	
-		if(cvRound(circles[i][0])x_pos[0] < )
-   		cvRound(circles[i][0])
-		cvRound(circles[i][1])
-
-   		
+	int y_pos[3];
+	x_pos[0] = 0;
+	y_pos[0] = 0;
+	x_pos[1] = 0;
+	y_pos[1] = 0;
+	for(int i = 0; i < circles.size(); i++){
+		if(cvRound(circles[i][0]) < cvRound(circles[x_pos[0]][0])) x_pos[0] = i;
+		if(cvRound(circles[i][0]) > cvRound(circles[x_pos[1]][0])) x_pos[1] = i;
+		if(cvRound(circles[i][1]) < cvRound(circles[y_pos[0]][1])) y_pos[0] = i;
+		if(cvRound(circles[i][1]) > cvRound(circles[y_pos[1]][1])) y_pos[1] = i;
  	}
 
+	y_pos[2] = (cvRound(circles[y_pos[0]][1]) + cvRound(circles[y_pos[1]][1]))/2;
+	/*
+	for(int i = 0; i < circles.size(); i++){
+		if(circlesL[i][0] < )
+
+
+	}
 	*/
+	cout << "Y max: " << cvRound(circles[y_pos[1]][1]) << " Y min: " << cvRound(circles[y_pos[0]][1]) << endl;
 
-
+	cout << "Y medio: " << y_pos[2] << endl;
 
 	cout << "Circulos encontrados totais: " << circles.size() << endl;
 	cout << "Circulos encontrados acesos: " << circlesL.size() << endl;
